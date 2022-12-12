@@ -1,28 +1,24 @@
 package com.test.employeedb;
 
-import java.util.HashMap;
+import static com.test.employeedb.mapper.DepartmentsDynamicSqlSupport.departments;
+import static com.test.employeedb.mapper.DepartmentsDynamicSqlSupport.deptName;
+import static com.test.employeedb.mapper.DeptEmpDynamicSqlSupport.deptEmp;
+import static com.test.employeedb.mapper.EmployeesDynamicSqlSupport.employees;
+import static com.test.employeedb.mapper.EmployeesDynamicSqlSupport.firstName;
+import static com.test.employeedb.mapper.EmployeesDynamicSqlSupport.lastName;
+import static org.mybatis.dynamic.sql.SqlBuilder.equalTo;
+import static org.mybatis.dynamic.sql.SqlBuilder.select;
+
 import java.util.List;
-import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 import org.mybatis.dynamic.sql.render.RenderingStrategies;
-import org.mybatis.dynamic.sql.render.RenderingStrategy;
-import org.mybatis.dynamic.sql.select.SelectModel;
 import org.mybatis.dynamic.sql.select.render.SelectStatementProvider;
-
-import static org.mybatis.dynamic.sql.SqlBuilder.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static com.test.employeedb.mapper.DeptEmpDynamicSqlSupport.*;
-
-import static com.test.employeedb.mapper.DepartmentsDynamicSqlSupport.*;
-
 import com.test.employeedb.mapper.BaseMapper;
 import com.test.employeedb.mapper.DeptEmpMapper;
-
-import static com.test.employeedb.mapper.EmployeesDynamicSqlSupport.*;
-import com.test.employeedb.model.DeptEmp;
 import com.test.employeedb.vo.DempWithEmps;
 
 @SpringBootTest
